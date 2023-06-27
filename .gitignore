@@ -481,4 +481,4 @@ $RECYCLE.BIN/
 
 # Custom developer environment
 devtunnel.ps
-temp/
+.temp/
