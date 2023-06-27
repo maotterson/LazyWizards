@@ -478,3 +478,7 @@ $RECYCLE.BIN/
 
 # VSCode
 .vscode/
+
+# Custom developer environment
+devtunnel.ps
+temp/
