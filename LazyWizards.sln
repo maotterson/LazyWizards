@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{05CDBC78-3E87-4B78-99BE-4C541CA76CCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyWizards.BlazorServer", "src\lazywizards.blazorserver\LazyWizards.BlazorServer.csproj", "{3803538B-2AE0-4DD0-88DE-F36E7BD15413}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +14,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3803538B-2AE0-4DD0-88DE-F36E7BD15413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3803538B-2AE0-4DD0-88DE-F36E7BD15413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3803538B-2AE0-4DD0-88DE-F36E7BD15413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3803538B-2AE0-4DD0-88DE-F36E7BD15413}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3803538B-2AE0-4DD0-88DE-F36E7BD15413} = {05CDBC78-3E87-4B78-99BE-4C541CA76CCC}
 	EndGlobalSection
 EndGlobal
