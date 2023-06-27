@@ -1,8 +1,17 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using LazyWizards.BlazorServer.Data;
+using Microsoft.AspNetCore.ResponseCompression;
+using BlazorServerSignalRApp.Server.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add response compression for SignalR
+builder.Services.AddResponseCompression(opts =>
+{
+   opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+         new[] { "application/octet-stream" });
+});
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -11,6 +20,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();
 
+app.UseResponseCompression();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -26,6 +36,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapBlazorHub();
+app.MapHub<ChatHub>("/statushub");
 app.MapFallbackToPage("/_Host");
 
 app.Run();
