@@ -1,4 +1,5 @@
-﻿namespace LazyWizards.BlazorServer;
+﻿using Microsoft.AspNetCore.SignalR;
+namespace LazyWizards.BlazorServer;
 
 public class StatusHub : Hub
 {
