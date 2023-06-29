@@ -1,4 +1,4 @@
-﻿namespace LazyWizards.BlazorServer;
+﻿namespace LazyWizards.BlazorServer.Utils.DependencyInjection;
 
 public enum DependencyRegistrationTypes
 {

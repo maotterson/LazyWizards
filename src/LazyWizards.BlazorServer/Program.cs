@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 using LazyWizards.BlazorServer.Data;
 using Microsoft.AspNetCore.ResponseCompression;
 using LazyWizards.BlazorServer;
+using LazyWizards.BlazorServer.Utils.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +14,12 @@ builder.Services.AddResponseCompression(opts =>
          new[] { "application/octet-stream" });
 });
 
-// Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+
+// Add services to the container.
+builder.Services.AddSingleton<WeatherForecastService>(); // can delete eventually
+builder.Services.AddServices();
 
 var app = builder.Build();
 

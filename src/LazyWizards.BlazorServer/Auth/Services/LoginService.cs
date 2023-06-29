@@ -1,6 +1,8 @@
-﻿namespace LazyWizards.BlazorServer;
+﻿using LazyWizards.BlazorServer.Utils.DependencyInjection;
 
-[Injectable(DependencyRegistrationTypes.Singleton)]
+namespace LazyWizards.BlazorServer.Auth.Services;
+
+[Injectable(DependencyRegistrationTypes.Singleton, typeof(ILoginService))]
 public class LoginService : ILoginService
 {
     public Task LoginAsync(string username, string password)

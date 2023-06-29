@@ -1,4 +1,4 @@
-﻿namespace LazyWizards.BlazorServer;
+﻿namespace LazyWizards.BlazorServer.Auth.Services;
 
 public interface ILoginService
 {
