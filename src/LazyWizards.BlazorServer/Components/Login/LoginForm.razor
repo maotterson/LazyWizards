@@ -1,12 +1,32 @@
-﻿<form>
+﻿@inject ILoginService _loginService
+<div>
     <input class="form-control" type="text" placeholder="Email" @bind="Username" @bind:event="oninput"/>
     <input class="form-control" type="password" placeholder="Password" @bind="Password" @bind:event="oninput"/>
-    <button class="form-control btn btn-primary">Login</button>
+    <button class="form-control btn btn-primary" @onclick="HandleLogin">Login</button>
     <button class="btn form-control">Register</button>
-</form>
+</div>
+@_error
+
 @Username
 @Password
 @code {
-    public string Username { get; set; }
-    public string Password { get; set; }
+    public string Username { get; set; } = "";
+    public string Password { get; set; } = "";
+    private string _error = "";
+
+    private async Task HandleLogin()
+    {
+        try
+        {
+            await _loginService.LoginAsync(Username, Password);
+        }
+        catch (Exception ex)
+        {
+            _error = ex.Message;
+        }
+        finally
+        {
+            StateHasChanged();
+        }
+    }
 }

@@ -11,7 +11,7 @@ public static class ServiceCollectionExtensions
         var injectables = GetInjectableTypes(a);
         injectables.ToList()
                 .ForEach((injectable) => {
-            var implementation = injectable.type.GetType();
+            var implementation = injectable.type;
             var contract = injectable.attr.ContractType;
             switch(injectable.attr.RegistrationType)
             {
